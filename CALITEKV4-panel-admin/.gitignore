@@ -1,0 +1,14 @@
+# Fichiers système
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Variables d'environnement (ne pas commit les secrets)
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log

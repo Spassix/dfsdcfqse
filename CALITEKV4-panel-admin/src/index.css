@@ -1,0 +1,1168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-white;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    /* Optimiser les performances */
+    will-change: auto;
+    transform: translateZ(0);
+    /* Thème noir et blanc adaptatif */
+    color-scheme: dark;
+    /* Fond gradient par défaut - plus d'écran noir */
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    background-color: var(--color-background, #1a1a2e);
+    color: var(--color-text-primary, #ffffff) !important;
+  }
+  
+  /* FORCER TOUS les textes à utiliser les couleurs personnalisées - EXCLURE inputs/textarea/select */
+  body,
+  body *:not(svg):not(path):not(circle):not(rect):not(line):not(polygon):not(polyline):not(input):not(textarea):not(select):not(option),
+  body h1,
+  body h2,
+  body h3,
+  body h4,
+  body h5,
+  body h6,
+  body p,
+  body span,
+  body div,
+  body a,
+  body li,
+  body td,
+  body th,
+  body label,
+  body button {
+    color: var(--color-text-primary, #ffffff) !important;
+  }
+  
+  /* Titres spécifiques - FORCER même avec classes Tailwind */
+  body h1,
+  body h2,
+  body h3,
+  body h4,
+  body h5,
+  body h6,
+  body .hero-title,
+  body .text-gradient,
+  body .text-3xl,
+  body .text-4xl,
+  body .text-5xl,
+  body .text-6xl,
+  body .text-7xl,
+  body h1.text-white,
+  body h1.text-gray-300,
+  body h1.text-gray-400,
+  body h2.text-white,
+  body h2.text-gray-300,
+  body h2.text-gray-400 {
+    color: var(--color-text-heading, #ffffff) !important;
+  }
+  
+  /* Textes secondaires - FORCER même avec classes Tailwind */
+  body .text-gray-400,
+  body .text-gray-300,
+  body .text-gray-500,
+  body .text-gray-600,
+  body .text-slate-400,
+  body .text-slate-300,
+  body .text-gray-200,
+  body p.text-gray-300,
+  body span.text-gray-300,
+  body div.text-gray-300 {
+    color: var(--color-text-secondary, #9ca3af) !important;
+  }
+  
+  /* Textes blancs - FORCER à utiliser couleur personnalisée */
+  body .text-white,
+  body span.text-white,
+  body div.text-white,
+  body p.text-white,
+  body h1.text-white,
+  body h2.text-white,
+  body h3.text-white {
+    color: var(--color-text-primary, #ffffff) !important;
+  }
+  
+  /* Liens */
+  body a,
+  body a:hover,
+  body a.text-white,
+  body a.text-gray-300 {
+    color: var(--color-link, #60a5fa) !important;
+  }
+  
+  /* Boutons */
+  body button,
+  body button.text-white,
+  body button.text-gray-300 {
+    color: var(--color-button-text, #ffffff) !important;
+    background-color: var(--color-button-background, #3b82f6) !important;
+  }
+  
+  /* FORCER les couleurs de texte même avec les événements */
+  body.event-active {
+    color: var(--color-text-primary, #ffffff) !important;
+  }
+  
+  /* Forcer tous les textes à utiliser les couleurs personnalisées même avec événements - EXCLURE inputs/textarea/select */
+  body.event-active *:not(svg):not(path):not(circle):not(rect):not(line):not(polygon):not(polyline):not(input):not(textarea):not(select):not(option),
+  body.event-active h1,
+  body.event-active h2,
+  body.event-active h3,
+  body.event-active h4,
+  body.event-active h5,
+  body.event-active h6,
+  body.event-active p,
+  body.event-active span,
+  body.event-active div,
+  body.event-active a,
+  body.event-active li,
+  body.event-active td,
+  body.event-active th,
+  body.event-active label,
+  body.event-active button {
+    color: var(--color-text-primary, #ffffff) !important;
+  }
+  
+  /* Titres spécifiques avec événements - FORCER même avec classes Tailwind */
+  body.event-active h1,
+  body.event-active h2,
+  body.event-active h3,
+  body.event-active h4,
+  body.event-active h5,
+  body.event-active h6,
+  body.event-active .hero-title,
+  body.event-active .text-gradient,
+  body.event-active h1.text-white,
+  body.event-active h1.text-gray-300,
+  body.event-active h2.text-white,
+  body.event-active h2.text-gray-300 {
+    color: var(--color-text-heading, #ffffff) !important;
+  }
+  
+  /* Textes secondaires avec événements - FORCER même avec classes Tailwind */
+  body.event-active .text-gray-400,
+  body.event-active .text-gray-300,
+  body.event-active .text-gray-500,
+  body.event-active .text-gray-600,
+  body.event-active .text-slate-400,
+  body.event-active .text-slate-300,
+  body.event-active p.text-gray-300,
+  body.event-active span.text-gray-300,
+  body.event-active div.text-gray-300 {
+    color: var(--color-text-secondary, #9ca3af) !important;
+  }
+  
+  /* Textes blancs avec événements - FORCER à utiliser couleur personnalisée */
+  body.event-active .text-white,
+  body.event-active span.text-white,
+  body.event-active div.text-white,
+  body.event-active p.text-white {
+    color: var(--color-text-primary, #ffffff) !important;
+  }
+  
+  /* Liens avec événements */
+  body.event-active a,
+  body.event-active a:hover,
+  body.event-active a.text-white,
+  body.event-active a.text-gray-300 {
+    color: var(--color-link, #60a5fa) !important;
+  }
+  
+  /* Boutons avec événements */
+  body.event-active button,
+  body.event-active button.text-white,
+  body.event-active button.text-gray-300 {
+    color: var(--color-button-text, #ffffff) !important;
+    background-color: var(--color-button-background, #3b82f6) !important;
+  }
+  
+  /* Override des couleurs d'événements pour les textes - EXCLURE inputs/textarea/select */
+  body.event-active[data-event="noel"] *:not(svg):not(path):not(circle):not(rect):not(line):not(polygon):not(polyline):not(input):not(textarea):not(select):not(option),
+  body.event-active[data-event="paques"] *:not(svg):not(path):not(circle):not(rect):not(line):not(polygon):not(polyline):not(input):not(textarea):not(select):not(option),
+  body.event-active[data-event="saintValentin"] *:not(svg):not(path):not(circle):not(rect):not(line):not(polygon):not(polyline):not(input):not(textarea):not(select):not(option),
+  body.event-active[data-event="halloween"] *:not(svg):not(path):not(circle):not(rect):not(line):not(polygon):not(polyline):not(input):not(textarea):not(select):not(option),
+  body.event-active[data-event="nouvelAn"] *:not(svg):not(path):not(circle):not(rect):not(line):not(polygon):not(polyline):not(input):not(textarea):not(select):not(option) {
+    color: var(--color-text-primary, #ffffff) !important;
+  }
+  
+  /* Thème adaptatif : fond clair = texte noir, fond sombre = texte blanc */
+  body.light-theme {
+    @apply bg-white text-black;
+    color-scheme: light;
+  }
+  
+  body.light-theme * {
+    color: inherit;
+  }
+  
+  body.light-theme .neon-border {
+    border-color: rgba(0, 0, 0, 0.3) !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  body.light-theme .bg-slate-900,
+  body.light-theme .bg-slate-800,
+  body.light-theme .bg-slate-700 {
+    @apply bg-gray-100 text-black !important;
+  }
+  
+  body.light-theme .bg-black {
+    @apply bg-white text-black !important;
+  }
+  
+  body.light-theme .text-white {
+    @apply text-black !important;
+  }
+  
+  body.light-theme .text-gray-400,
+  body.light-theme .text-gray-300 {
+    @apply text-gray-700 !important;
+  }
+  
+  body.light-theme header {
+    @apply bg-white/95 text-black !important;
+    border-bottom-color: rgba(0, 0, 0, 0.15) !important;
+  }
+  
+  body.light-theme header a,
+  body.light-theme header button {
+    @apply text-black !important;
+  }
+  
+  body.light-theme .bg-gradient-to-r {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.1)) !important;
+  }
+  
+  /* Assurer un bon contraste sur les cartes produits */
+  body.light-theme .bg-slate-800\/90 {
+    @apply bg-white/90 text-black !important;
+  }
+  
+  body.light-theme .text-slate-300 {
+    @apply text-gray-800 !important;
+  }
+  
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: -1;
+    pointer-events: none;
+  }
+  
+  /* Style pour l'image de fond de la boutique - Mode mosaïque adaptatif */
+  html.has-background-image,
+  body.has-background-image {
+    background-image: var(--shop-background-image, none) !important;
+    background-size: auto !important;
+    background-position: top left !important;
+    background-attachment: fixed !important;
+    background-repeat: repeat !important;
+    background-color: transparent !important;
+    min-height: 100vh !important;
+    width: 100% !important;
+  }
+  
+  /* Adaptation mobile - image plus petite pour mieux s'afficher */
+  @media (max-width: 768px) {
+    html.has-background-image,
+    body.has-background-image {
+      background-size: 200px auto !important;
+      background-attachment: scroll !important;
+    }
+  }
+  
+  /* Adaptation tablette */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    html.has-background-image,
+    body.has-background-image {
+      background-size: 300px auto !important;
+      background-attachment: fixed !important;
+    }
+  }
+  
+  /* Adaptation desktop */
+  @media (min-width: 1025px) {
+    html.has-background-image,
+    body.has-background-image {
+      background-size: auto !important;
+      background-attachment: fixed !important;
+    }
+  }
+  
+  /* Forcer l'image de fond sur les éléments avec cosmic-bg - Mode mosaïque adaptatif */
+  html.has-background-image .cosmic-bg,
+  body.has-background-image .cosmic-bg,
+  #root.has-background-image .cosmic-bg,
+  .has-background-image .cosmic-bg {
+    background-image: var(--shop-background-image, none) !important;
+    background-size: auto !important;
+    background-position: top left !important;
+    background-attachment: fixed !important;
+    background-repeat: repeat !important;
+    animation: none !important;
+    min-height: 100vh !important;
+    width: 100% !important;
+  }
+  
+  /* Adaptation mobile pour cosmic-bg */
+  @media (max-width: 768px) {
+    html.has-background-image .cosmic-bg,
+    body.has-background-image .cosmic-bg,
+    #root.has-background-image .cosmic-bg,
+    .has-background-image .cosmic-bg {
+      background-size: 200px auto !important;
+      background-attachment: scroll !important;
+    }
+  }
+  
+  /* Adaptation tablette pour cosmic-bg */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    html.has-background-image .cosmic-bg,
+    body.has-background-image .cosmic-bg,
+    #root.has-background-image .cosmic-bg,
+    .has-background-image .cosmic-bg {
+      background-size: 300px auto !important;
+      background-attachment: fixed !important;
+    }
+  }
+  
+  /* Adaptation desktop pour cosmic-bg */
+  @media (min-width: 1025px) {
+    html.has-background-image .cosmic-bg,
+    body.has-background-image .cosmic-bg,
+    #root.has-background-image .cosmic-bg,
+    .has-background-image .cosmic-bg {
+      background-size: auto !important;
+      background-attachment: fixed !important;
+    }
+  }
+  
+  /* Masquer le gradient de cosmic-bg quand il y a une image */
+  html.has-background-image .cosmic-bg::before,
+  body.has-background-image .cosmic-bg::before,
+  #root.has-background-image .cosmic-bg::before,
+  .has-background-image .cosmic-bg::before {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+  
+  body.has-background-image::before {
+    opacity: 0.2 !important;
+  }
+  
+  /* Assurer que le contenu est au-dessus de l'overlay */
+  #root {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Police élégante pour les grands titres */
+  h1, .hero-title {
+    font-family: var(--title-font, 'Playfair Display'), serif;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+  
+  /* Définir les variables CSS par défaut */
+  :root {
+    --title-font: 'Playfair Display';
+    --color-text: #ffffff;
+    --color-text-secondary: #9ca3af;
+    --color-heading: #ffffff;
+    --color-accent: #ffffff;
+    --event-primary: '';
+    --event-secondary: '';
+    --event-accent: '';
+    --event-gradient: '';
+    /* Variables de couleurs personnalisables */
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #9ca3af;
+    --color-text-heading: #ffffff;
+    --color-background: #000000;
+    --color-card-background: #1e293b;
+    --color-border: #334155;
+    --color-button-text: #ffffff;
+    --color-button-background: #3b82f6;
+    --color-link: #60a5fa;
+    --color-accent: #ffffff;
+  }
+  
+  /* Styles pour les événements actifs - AFFECTE TOUTE LA BOUTIQUE */
+  body.event-active {
+    position: relative;
+  }
+  
+  body.event-active::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--event-overlay, rgba(236, 72, 153, 0.1));
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: overlay;
+  }
+  
+  /* Effets subtils pour Noël - juste les bordures */
+  body.event-active[data-event="noel"] .neon-border {
+    animation: twinkle 3s ease-in-out infinite;
+    position: relative;
+    border-color: rgba(220, 38, 38, 0.3) !important;
+  }
+  
+  @keyframes twinkle {
+    0%, 100% { 
+      box-shadow: 0 0 15px var(--event-primary, rgba(220, 38, 38, 0.4)),
+                  0 0 25px var(--event-secondary, rgba(22, 163, 74, 0.3));
+    }
+    50% { 
+      box-shadow: 0 0 25px var(--event-primary, rgba(220, 38, 38, 0.7)),
+                  0 0 35px var(--event-secondary, rgba(22, 163, 74, 0.5));
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(10deg); }
+  }
+  
+  /* Effets subtils pour Pâques - juste les bordures */
+  body.event-active[data-event="paques"] .neon-border {
+    position: relative;
+    border-color: rgba(244, 114, 182, 0.3) !important;
+    animation: twinkle 3s ease-in-out infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-8px) scale(1.1); }
+  }
+  
+  /* Effets subtils pour Saint-Valentin - juste les bordures */
+  body.event-active[data-event="saintValentin"] .neon-border {
+    position: relative;
+    border-color: rgba(236, 72, 153, 0.3) !important;
+    animation: twinkle 3s ease-in-out infinite;
+  }
+  
+  @keyframes heartBeat {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    25% { transform: translate(-50%, -50%) scale(1.15); }
+    50% { transform: translate(-50%, -50%) scale(1.2); }
+    75% { transform: translate(-50%, -50%) scale(1.1); }
+  }
+  
+  /* Effets subtils pour Halloween - juste les bordures */
+  body.event-active[data-event="halloween"] .neon-border {
+    position: relative;
+    filter: drop-shadow(0 0 4px var(--event-primary, rgba(249, 115, 22, 0.3)));
+    border-color: rgba(249, 115, 22, 0.3) !important;
+    animation: twinkle 3s ease-in-out infinite;
+  }
+  
+  @keyframes shake {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+  }
+  
+  @keyframes fly {
+    0%, 100% { transform: translateX(0) translateY(0); }
+    50% { transform: translateX(10px) translateY(-10px); }
+  }
+  
+  /* Effets subtils pour Nouvel An - juste les bordures */
+  body.event-active[data-event="nouvelAn"] .neon-border {
+    position: relative;
+    animation: sparkle 2s ease-in-out infinite;
+    border-color: rgba(59, 130, 246, 0.3) !important;
+  }
+  
+  @keyframes sparkle {
+    0%, 100% { 
+      box-shadow: 0 0 15px var(--event-primary, rgba(59, 130, 246, 0.4)),
+                  0 0 25px var(--event-secondary, rgba(139, 92, 246, 0.4)),
+                  0 0 35px var(--event-accent, rgba(251, 191, 36, 0.3));
+    }
+    50% { 
+      box-shadow: 0 0 25px var(--event-primary, rgba(59, 130, 246, 0.7)),
+                  0 0 35px var(--event-secondary, rgba(139, 92, 246, 0.7)),
+                  0 0 45px var(--event-accent, rgba(251, 191, 36, 0.5));
+    }
+  }
+  
+  @keyframes explode {
+    0%, 100% { transform: translateX(-50%) translateY(0) scale(1); }
+    50% { transform: translateX(-50%) translateY(-10px) scale(1.2); }
+  }
+  
+  @keyframes pop {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.15) rotate(10deg); }
+  }
+  
+  :root.event-active {
+    --color-accent: var(--event-primary, #ec4899);
+  }
+  
+  :root.event-active .neon-border,
+  body.event-active .neon-border {
+    border-color: var(--event-primary, rgba(255, 255, 255, 0.15)) !important;
+    box-shadow: 0 0 10px var(--event-primary, rgba(236, 72, 153, 0.3));
+  }
+  
+  :root.event-active .bg-gradient-to-r,
+  body.event-active .bg-gradient-to-r {
+    background: var(--event-gradient, linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%)) !important;
+  }
+  
+  :root.event-active .text-gradient,
+  body.event-active .text-gradient {
+    background: var(--event-gradient, linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  :root.event-active .event-header,
+  body.event-active header {
+    border-bottom-color: var(--event-primary, rgba(255, 255, 255, 0.1)) !important;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.9) 100%);
+  }
+  
+  /* Appliquer les couleurs sur tous les éléments interactifs */
+  body.event-active button,
+  body.event-active .bg-slate-900,
+  body.event-active .bg-slate-800 {
+    border-color: var(--event-primary, rgba(255, 255, 255, 0.15)) !important;
+  }
+  
+  body.event-active .bg-slate-900\/50,
+  body.event-active .bg-slate-800\/50 {
+    background-color: rgba(15, 23, 42, 0.7) !important;
+    border-color: var(--event-primary, rgba(255, 255, 255, 0.2)) !important;
+  }
+  
+  /* Effet sur les cartes produits */
+  body.event-active .neon-border {
+    transition: all 0.3s ease;
+  }
+  
+  body.event-active .neon-border:hover {
+    border-color: var(--event-primary, rgba(255, 255, 255, 0.5)) !important;
+    box-shadow: 0 0 20px var(--event-primary, rgba(236, 72, 153, 0.5));
+  }
+  
+  /* Optimiser les animations */
+  * {
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+  }
+}
+
+@layer utilities {
+  /* Classes pour utiliser les couleurs personnalisables */
+  .text-theme {
+    color: var(--color-text);
+  }
+  
+  .text-theme-secondary {
+    color: var(--color-text-secondary);
+  }
+  
+  .text-theme-heading {
+    color: var(--color-heading);
+  }
+  
+  .text-theme-accent {
+    color: var(--color-accent);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 50%, #3b82f6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .glow-effect {
+    text-shadow: 0 0 10px rgba(236, 72, 153, 0.5),
+                 0 0 20px rgba(139, 92, 246, 0.5),
+                 0 0 30px rgba(59, 130, 246, 0.3);
+  }
+
+  .neon-border {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1),
+                0 0 20px rgba(236, 72, 153, 0.1),
+                inset 0 0 10px rgba(255, 255, 255, 0.05);
+  }
+
+  .cosmic-bg {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #1e293b 75%, #0f172a 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  .cosmic-bg::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+}
+
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555555;
+}
+
+/* Styles spécifiques pour le modal de vérification d'âge +18 - FORCER le centrage */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden;
+}
+
+/* FORCER le LoadingScreen à être au-dessus de TOUT (z-index maximum) */
+div[style*="z-index: 99999"],
+div[style*="zIndex: 99999"] {
+  /* Le style inline sera utilisé en priorité grâce à la spécificité */
+  /* Mais on force un fond par défaut pour éviter l'écran noir */
+  background-color: #1a1a2e !important;
+  /* FORCER le centrage vertical et horizontal - fonctionne sur tous les appareils */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  min-height: 100vh !important;
+  /* S'assurer que le contenu est centré même sur mobile */
+  padding: 1rem !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  /* Z-INDEX MAXIMUM pour être au-dessus de tout */
+  z-index: 99999 !important;
+}
+
+/* FORCER le centrage du contenu interne */
+div[style*="z-index: 99999"] > div[class*="relative"],
+div[style*="zIndex: 99999"] > div[class*="relative"] {
+  margin: auto !important;
+  align-self: center !important;
+  justify-self: center !important;
+}
+
+
+
+[class*="AgeVerification"] > div[class*="fixed"],
+div[style*="z-index: 100"],
+div[style*="zIndex: 100"],
+div[style*="z-index: 100"] {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  min-height: 100vh !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  padding: 1rem !important;
+  box-sizing: border-box !important;
+  overflow-y: auto !important;
+}
+
+/* Contenu du modal centré verticalement et horizontalement */
+[class*="AgeVerification"] > div[class*="fixed"] > div[class*="relative"] {
+  margin: auto !important;
+  align-self: center !important;
+}
+
+/* Styles pour les champs de formulaire - FORCER texte noir sur fond blanc pour visibilité */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+input[type="search"],
+input[type="date"],
+input[type="time"],
+input[type="file"],
+textarea,
+select {
+  color: #000000 !important;
+  background-color: #ffffff !important;
+}
+
+/* FORCER texte noir pour TOUS les inputs et textarea, même avec classes Tailwind */
+input,
+textarea,
+select,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+input[type="search"],
+input[type="date"],
+input[type="time"],
+input[type="file"] {
+  color: #000000 !important;
+  background-color: #ffffff !important;
+}
+
+/* FORCER texte noir même avec toutes les classes Tailwind possibles */
+input.text-white,
+textarea.text-white,
+select.text-white,
+input.bg-slate-800.text-white,
+textarea.bg-slate-800.text-white,
+select.bg-slate-800.text-white,
+input.bg-black.text-white,
+textarea.bg-black.text-white,
+select.bg-black.text-white,
+input.bg-gray-800.text-white,
+textarea.bg-gray-800.text-white,
+select.bg-gray-800.text-white {
+  color: #000000 !important;
+  background-color: #ffffff !important;
+}
+
+/* Même pour les inputs avec classes bg-slate ou bg-gray - forcer fond blanc et texte noir */
+input[type="text"][class*="bg-slate"],
+input[type="text"][class*="bg-gray"],
+input[type="email"][class*="bg-slate"],
+input[type="email"][class*="bg-gray"],
+input[type="password"][class*="bg-slate"],
+input[type="password"][class*="bg-gray"],
+input[type="number"][class*="bg-slate"],
+input[type="number"][class*="bg-gray"],
+input[type="tel"][class*="bg-slate"],
+input[type="tel"][class*="bg-gray"],
+input[type="url"][class*="bg-slate"],
+input[type="url"][class*="bg-gray"],
+input[type="search"][class*="bg-slate"],
+input[type="search"][class*="bg-gray"],
+input[type="date"][class*="bg-slate"],
+input[type="date"][class*="bg-gray"],
+input[type="time"][class*="bg-slate"],
+input[type="time"][class*="bg-gray"],
+input[type="file"][class*="bg-slate"],
+input[type="file"][class*="bg-gray"],
+textarea[class*="bg-slate"],
+textarea[class*="bg-gray"],
+select[class*="bg-slate"],
+select[class*="bg-gray"] {
+  color: #000000 !important;
+  background-color: #ffffff !important;
+}
+
+/* Cibler spécifiquement les classes Tailwind communes - forcer fond blanc et texte noir */
+.bg-slate-800 input,
+.bg-slate-800 textarea,
+.bg-slate-800 select,
+.bg-gray-800 input,
+.bg-gray-800 textarea,
+.bg-gray-800 select,
+.bg-slate-700 input,
+.bg-slate-700 textarea,
+.bg-slate-700 select,
+.bg-slate-900 input,
+.bg-slate-900 textarea,
+.bg-slate-900 select {
+  color: #000000 !important;
+  background-color: #ffffff !important;
+}
+
+/* FORCER texte noir même avec classes text-white ou text-gray - RÈGLES ULTRA SPÉCIFIQUES */
+input.text-white,
+textarea.text-white,
+select.text-white,
+input.text-gray-300,
+textarea.text-gray-300,
+select.text-gray-300,
+input.text-gray-400,
+textarea.text-gray-400,
+select.text-gray-400,
+input[class*="text-white"],
+textarea[class*="text-white"],
+select[class*="text-white"],
+input[class*="bg-slate"][class*="text-white"],
+textarea[class*="bg-slate"][class*="text-white"],
+select[class*="bg-slate"][class*="text-white"],
+input[class*="bg-black"][class*="text-white"],
+textarea[class*="bg-black"][class*="text-white"],
+select[class*="bg-black"][class*="text-white"],
+input[class*="bg-gray"][class*="text-white"],
+textarea[class*="bg-gray"][class*="text-white"],
+select[class*="bg-gray"][class*="text-white"] {
+  color: #000000 !important;
+  background-color: #ffffff !important;
+}
+
+/* Règle finale pour TOUS les inputs/textarea/select - priorité maximale */
+* input,
+* textarea,
+* select {
+  color: #000000 !important;
+  background-color: #ffffff !important;
+}
+
+/* Placeholder en gris foncé pour visibilité sur fond blanc */
+input::placeholder,
+textarea::placeholder {
+  color: #666666 !important;
+  opacity: 1 !important;
+}
+
+/* Même pour les inputs avec classes bg-slate ou bg-gray - placeholder gris foncé */
+input[class*="bg-slate"]::placeholder,
+input[class*="bg-gray"]::placeholder,
+textarea[class*="bg-slate"]::placeholder,
+textarea[class*="bg-gray"]::placeholder {
+  color: #666666 !important;
+}
+
+/* Options des selects en noir sur fond blanc */
+select option,
+select option[value],
+select option:checked,
+select option:selected {
+  color: #000000 !important;
+  background-color: #ffffff !important;
+}
+
+/* Même pour les selects avec classes bg-slate ou bg-gray - options en noir */
+select[class*="bg-slate"] option,
+select[class*="bg-gray"] option,
+select[class*="bg-black"] option,
+select[class*="text-white"] option {
+  color: #000000 !important;
+  background-color: #ffffff !important;
+}
+
+/* Forcer le texte saisi dans les champs à être noir */
+input:focus,
+textarea:focus,
+select:focus,
+input:active,
+textarea:active,
+select:active,
+input:not(:placeholder-shown),
+textarea:not(:placeholder-shown) {
+  color: #000000 !important;
+  background-color: #ffffff !important;
+}
+
+/* Exception pour les modals admin - inputs sombres avec texte blanc */
+.admin-modal input[type="text"],
+.admin-modal input[type="email"],
+.admin-modal input[type="password"],
+.admin-modal input[type="number"],
+.admin-modal input[type="tel"],
+.admin-modal input[type="url"],
+.admin-modal input[type="search"],
+.admin-modal input[type="date"],
+.admin-modal input[type="time"],
+.admin-modal textarea,
+.admin-modal select {
+  color: #ffffff !important;
+  background-color: #1e293b !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.admin-modal input::placeholder,
+.admin-modal textarea::placeholder {
+  color: #9ca3af !important;
+  opacity: 1 !important;
+}
+
+.admin-modal select option {
+  color: #000000 !important;
+  background-color: #ffffff !important;
+}
+
+/* Forcer aussi le texte dans les champs avec autofill */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: #000000 !important;
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+  box-shadow: 0 0 0px 1000px #ffffff inset !important;
+}
+
+/* ============================================
+   EFFETS VISUELS POUR ÉVÉNEMENTS
+   Bordures néon, glow, text-shadow sur les éléments
+   ============================================ */
+
+/* ============================================
+   DÉCORATIONS VISUELLES POUR ÉVÉNEMENTS
+   ============================================ */
+
+/* Guirlandes de Noël en haut de page - SUPPRIMÉES */
+
+/* Effets visuels Noël - Bordures néon et glow sur les éléments */
+body.event-active[data-event="noel"].event-effects-enabled .neon-border {
+  border-color: rgba(220, 38, 38, 0.7) !important;
+  box-shadow: 0 0 25px rgba(220, 38, 38, 0.8),
+              0 0 50px rgba(22, 163, 74, 0.6),
+              0 0 80px rgba(220, 38, 38, 0.5),
+              inset 0 0 20px rgba(255, 215, 0, 0.3) !important;
+  animation: christmasGlow 2s ease-in-out infinite !important;
+  position: relative;
+}
+
+@keyframes christmasGlow {
+  0%, 100% { 
+    box-shadow: 0 0 25px rgba(220, 38, 38, 0.8),
+                0 0 50px rgba(22, 163, 74, 0.6),
+                0 0 80px rgba(220, 38, 38, 0.5),
+                inset 0 0 20px rgba(255, 215, 0, 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 35px rgba(220, 38, 38, 1),
+                0 0 70px rgba(22, 163, 74, 0.8),
+                0 0 100px rgba(220, 38, 38, 0.7),
+                inset 0 0 30px rgba(255, 215, 0, 0.5);
+  }
+}
+
+body.event-active[data-event="noel"].event-effects-enabled .bg-slate-900,
+body.event-active[data-event="noel"].event-effects-enabled .bg-slate-800 {
+  box-shadow: 0 0 20px rgba(220, 38, 38, 0.6),
+              0 0 40px rgba(22, 163, 74, 0.5),
+              inset 0 0 15px rgba(255, 215, 0, 0.2) !important;
+  border: 1px solid rgba(220, 38, 38, 0.4) !important;
+  position: relative;
+}
+
+body.event-active[data-event="noel"].event-effects-enabled .bg-slate-900::before,
+body.event-active[data-event="noel"].event-effects-enabled .bg-slate-800::before {
+  content: '✨';
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 16px;
+  animation: sparkle 1.5s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0.6; transform: scale(1) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1.2) rotate(180deg); }
+}
+
+body.event-active[data-event="noel"].event-effects-enabled h1,
+body.event-active[data-event="noel"].event-effects-enabled h2,
+body.event-active[data-event="noel"].event-effects-enabled h3 {
+  text-shadow: 0 0 15px rgba(220, 38, 38, 0.8),
+               0 0 30px rgba(22, 163, 74, 0.6),
+               0 0 45px rgba(255, 215, 0, 0.5),
+               2px 2px 4px rgba(0, 0, 0, 0.8) !important;
+  position: relative;
+  animation: titleSparkle 3s ease-in-out infinite;
+}
+
+@keyframes titleSparkle {
+  0%, 100% { 
+    text-shadow: 0 0 15px rgba(220, 38, 38, 0.8),
+                 0 0 30px rgba(22, 163, 74, 0.6),
+                 0 0 45px rgba(255, 215, 0, 0.5),
+                 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+  50% { 
+    text-shadow: 0 0 25px rgba(220, 38, 38, 1),
+                 0 0 50px rgba(22, 163, 74, 0.8),
+                 0 0 70px rgba(255, 215, 0, 0.7),
+                 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+}
+
+/* Guirlandes de Pâques - SUPPRIMÉES */
+
+/* Effets visuels Pâques */
+body.event-active[data-event="paques"].event-effects-enabled .neon-border {
+  border-color: rgba(244, 114, 182, 0.5) !important;
+  box-shadow: 0 0 20px rgba(244, 114, 182, 0.4),
+              0 0 40px rgba(167, 139, 250, 0.3),
+              inset 0 0 20px rgba(244, 114, 182, 0.1) !important;
+  animation: twinkle 2s ease-in-out infinite !important;
+}
+
+body.event-active[data-event="paques"].event-effects-enabled .bg-slate-900,
+body.event-active[data-event="paques"].event-effects-enabled .bg-slate-800 {
+  box-shadow: 0 0 15px rgba(244, 114, 182, 0.2) !important;
+}
+
+body.event-active[data-event="paques"].event-effects-enabled h1,
+body.event-active[data-event="paques"].event-effects-enabled h2,
+body.event-active[data-event="paques"].event-effects-enabled h3 {
+  text-shadow: 0 0 10px rgba(244, 114, 182, 0.5),
+               0 0 20px rgba(167, 139, 250, 0.3) !important;
+}
+
+/* Guirlandes de Saint-Valentin - SUPPRIMÉES */
+
+/* Effets visuels Saint-Valentin */
+body.event-active[data-event="saintValentin"].event-effects-enabled .neon-border {
+  border-color: rgba(236, 72, 153, 0.5) !important;
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.4),
+              0 0 40px rgba(244, 63, 94, 0.3),
+              inset 0 0 20px rgba(236, 72, 153, 0.1) !important;
+  animation: twinkle 2s ease-in-out infinite !important;
+}
+
+body.event-active[data-event="saintValentin"].event-effects-enabled .bg-slate-900,
+body.event-active[data-event="saintValentin"].event-effects-enabled .bg-slate-800 {
+  box-shadow: 0 0 15px rgba(236, 72, 153, 0.2) !important;
+}
+
+body.event-active[data-event="saintValentin"].event-effects-enabled h1,
+body.event-active[data-event="saintValentin"].event-effects-enabled h2,
+body.event-active[data-event="saintValentin"].event-effects-enabled h3 {
+  text-shadow: 0 0 10px rgba(236, 72, 153, 0.5),
+               0 0 20px rgba(244, 63, 94, 0.3) !important;
+}
+
+/* Guirlandes d'Halloween - SUPPRIMÉES */
+
+/* Effets visuels Halloween */
+body.event-active[data-event="halloween"].event-effects-enabled .neon-border {
+  border-color: rgba(249, 115, 22, 0.7) !important;
+  box-shadow: 0 0 25px rgba(249, 115, 22, 0.8),
+              0 0 50px rgba(124, 45, 18, 0.6),
+              0 0 80px rgba(249, 115, 22, 0.5),
+              inset 0 0 20px rgba(255, 140, 0, 0.3) !important;
+  animation: halloweenGlow 2s ease-in-out infinite !important;
+  filter: drop-shadow(0 0 12px rgba(249, 115, 22, 0.8)) !important;
+  position: relative;
+}
+
+@keyframes halloweenGlow {
+  0%, 100% { 
+    box-shadow: 0 0 25px rgba(249, 115, 22, 0.8),
+                0 0 50px rgba(124, 45, 18, 0.6),
+                0 0 80px rgba(249, 115, 22, 0.5),
+                inset 0 0 20px rgba(255, 140, 0, 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 35px rgba(249, 115, 22, 1),
+                0 0 70px rgba(124, 45, 18, 0.8),
+                0 0 100px rgba(249, 115, 22, 0.7),
+                inset 0 0 30px rgba(255, 140, 0, 0.5);
+  }
+}
+
+body.event-active[data-event="halloween"].event-effects-enabled .bg-slate-900,
+body.event-active[data-event="halloween"].event-effects-enabled .bg-slate-800 {
+  box-shadow: 0 0 15px rgba(249, 115, 22, 0.2) !important;
+}
+
+body.event-active[data-event="halloween"].event-effects-enabled h1,
+body.event-active[data-event="halloween"].event-effects-enabled h2,
+body.event-active[data-event="halloween"].event-effects-enabled h3 {
+  text-shadow: 0 0 10px rgba(249, 115, 22, 0.5),
+               0 0 20px rgba(124, 45, 18, 0.3) !important;
+}
+
+/* Guirlandes de Nouvel An - SUPPRIMÉES */
+
+/* Effets visuels Nouvel An */
+body.event-active[data-event="nouvelAn"].event-effects-enabled .neon-border {
+  border-color: rgba(59, 130, 246, 0.7) !important;
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.8),
+              0 0 50px rgba(139, 92, 246, 0.6),
+              0 0 80px rgba(251, 191, 36, 0.5),
+              inset 0 0 20px rgba(255, 215, 0, 0.3) !important;
+  animation: newYearSparkle 2s ease-in-out infinite !important;
+  position: relative;
+}
+
+@keyframes newYearSparkle {
+  0%, 100% { 
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.8),
+                0 0 50px rgba(139, 92, 246, 0.6),
+                0 0 80px rgba(251, 191, 36, 0.5),
+                inset 0 0 20px rgba(255, 215, 0, 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 35px rgba(59, 130, 246, 1),
+                0 0 70px rgba(139, 92, 246, 0.8),
+                0 0 100px rgba(251, 191, 36, 0.7),
+                inset 0 0 30px rgba(255, 215, 0, 0.5);
+  }
+}
+
+body.event-active[data-event="nouvelAn"].event-effects-enabled .bg-slate-900,
+body.event-active[data-event="nouvelAn"].event-effects-enabled .bg-slate-800 {
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.2) !important;
+}
+
+body.event-active[data-event="nouvelAn"].event-effects-enabled h1,
+body.event-active[data-event="nouvelAn"].event-effects-enabled h2,
+body.event-active[data-event="nouvelAn"].event-effects-enabled h3 {
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.5),
+               0 0 20px rgba(139, 92, 246, 0.3),
+               0 0 30px rgba(251, 191, 36, 0.2) !important;
+}

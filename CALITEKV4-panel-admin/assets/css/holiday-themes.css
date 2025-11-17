@@ -1,0 +1,2142 @@
+/* ============================================
+   DÉCORATIONS DE FÊTES - THÈMES ULTRA DÉTAILLÉS
+   Version Premium avec effets avancés
+   ============================================ */
+
+/* ============================================
+   NOËL - CHRISTMAS - DÉCORATIONS COMPLÈTES
+   ============================================ */
+
+body.holiday-christmas {
+  position: relative;
+  overflow-x: hidden;
+  background: linear-gradient(135deg, #0a1a0a 0%, #1a0a0a 50%, #0a0a1a 100%);
+  background-attachment: fixed;
+}
+
+/* Guirlandes de Noël avec ampoules clignotantes */
+body.holiday-christmas::before,
+body.holiday-christmas::after {
+  content: '';
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: 
+    repeating-linear-gradient(
+      90deg,
+      #c41e3a 0px,
+      #c41e3a 20px,
+      #228b22 20px,
+      #228b22 40px,
+      #ffd700 40px,
+      #ffd700 60px,
+      #c41e3a 60px,
+      #c41e3a 80px,
+      #228b22 80px,
+      #228b22 100px,
+      #ffd700 100px,
+      #ffd700 120px
+    );
+  background-size: 200% 100%;
+  animation: garlandSlide 4s linear infinite;
+  z-index: 10000;
+  pointer-events: none;
+  opacity: 0.95;
+  box-shadow: 
+    0 0 20px rgba(196, 30, 58, 0.6),
+    0 0 40px rgba(34, 139, 34, 0.4),
+    0 0 60px rgba(255, 215, 0, 0.3),
+    inset 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.holiday-christmas::before {
+  top: 0;
+  border-bottom: 3px solid rgba(255, 215, 0, 0.5);
+}
+
+body.holiday-christmas::after {
+  top: auto;
+  bottom: 0;
+  animation: garlandSlide 4s linear infinite reverse;
+  border-top: 3px solid rgba(255, 215, 0, 0.5);
+}
+
+@keyframes garlandSlide {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 0%; }
+}
+
+/* Ampoules clignotantes sur les guirlandes */
+body.holiday-christmas::before,
+body.holiday-christmas::after {
+  position: relative;
+}
+
+body.holiday-christmas::before::after,
+body.holiday-christmas::after::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, transparent 70%);
+  animation: bulbTwinkle 1.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes bulbTwinkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Flocons de neige variés - Tailles et vitesses différentes */
+body.holiday-christmas .snowflake {
+  position: fixed;
+  top: -20px;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  text-shadow: 
+    0 0 5px rgba(255, 255, 255, 0.9),
+    0 0 10px rgba(255, 255, 255, 0.6),
+    0 0 15px rgba(255, 255, 255, 0.3);
+  user-select: none;
+  z-index: 9999;
+  pointer-events: none;
+  animation: snowfall linear forwards;
+  filter: blur(0.5px);
+  will-change: transform, opacity;
+  /* Les tailles et durées sont définies en JavaScript pour éviter les conflits */
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+  25% {
+    transform: translateY(25vh) translateX(20px) rotate(90deg);
+  }
+  50% {
+    transform: translateY(50vh) translateX(-15px) rotate(180deg);
+  }
+  75% {
+    transform: translateY(75vh) translateX(10px) rotate(270deg);
+  }
+  100% {
+    transform: translateY(100vh) translateX(0) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Étoiles scintillantes - DÉSACTIVÉES */
+/* Les étoiles flottantes ont été désactivées
+body.holiday-christmas .star-decoration {
+  position: fixed;
+  color: #ffd700;
+  font-size: 1.5em;
+  z-index: 9998;
+  pointer-events: none;
+  text-shadow: 
+    0 0 10px rgba(255, 215, 0, 1),
+    0 0 20px rgba(255, 215, 0, 0.8),
+    0 0 30px rgba(255, 215, 0, 0.6);
+  animation: starTwinkle 2s ease-in-out infinite;
+}
+
+@keyframes starTwinkle {
+  0%, 100% { 
+    opacity: 0.3; 
+    transform: scale(0.8) rotate(0deg);
+  }
+  50% { 
+    opacity: 1; 
+    transform: scale(1.2) rotate(180deg);
+  }
+}
+*/
+
+/* Boules de Noël flottantes */
+body.holiday-christmas .ornament {
+  position: fixed;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  z-index: 9997;
+  pointer-events: none;
+  box-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.5),
+    inset -5px -5px 10px rgba(0, 0, 0, 0.3),
+    inset 5px 5px 10px rgba(255, 255, 255, 0.3);
+  animation: ornamentFloat 6s ease-in-out infinite;
+}
+
+body.holiday-christmas .ornament.red {
+  background: radial-gradient(circle at 30% 30%, #ff6b6b, #c41e3a);
+}
+
+body.holiday-christmas .ornament.gold {
+  background: radial-gradient(circle at 30% 30%, #ffed4e, #ffd700);
+}
+
+body.holiday-christmas .ornament.green {
+  background: radial-gradient(circle at 30% 30%, #51cf66, #228b22);
+}
+
+@keyframes ornamentFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(180deg);
+  }
+}
+
+/* Lumières scintillantes */
+body.holiday-christmas .light-sparkle {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  background: #ffd700;
+  border-radius: 50%;
+  z-index: 9996;
+  pointer-events: none;
+  box-shadow: 
+    0 0 6px rgba(255, 215, 0, 1),
+    0 0 12px rgba(255, 215, 0, 0.8),
+    0 0 18px rgba(255, 215, 0, 0.6);
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% { 
+    opacity: 0; 
+    transform: scale(0);
+  }
+  50% { 
+    opacity: 1; 
+    transform: scale(1.5);
+  }
+}
+
+/* Hero avec effets de lumière */
+body.holiday-christmas .hero {
+  background: linear-gradient(135deg, rgba(26, 10, 10, 0.95) 0%, rgba(10, 26, 10, 0.95) 100%);
+  border: 3px solid rgba(196, 30, 58, 0.4);
+  box-shadow: 
+    0 0 30px rgba(196, 30, 58, 0.3),
+    0 0 60px rgba(34, 139, 34, 0.2),
+    0 0 90px rgba(255, 215, 0, 0.1),
+    inset 0 0 30px rgba(255, 215, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+body.holiday-christmas .hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+  animation: lightRotate 10s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes lightRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Texte avec effets */
+body.holiday-christmas .hero-brand {
+  color: #ffd700;
+  text-shadow: 
+    0 0 10px rgba(255, 215, 0, 0.9),
+    0 0 20px rgba(196, 30, 58, 0.7),
+    0 0 30px rgba(34, 139, 34, 0.5),
+    0 0 40px rgba(255, 215, 0, 0.3);
+  animation: textGlow 3s ease-in-out infinite alternate;
+  position: relative;
+}
+
+@keyframes textGlow {
+  from {
+    text-shadow: 
+      0 0 10px rgba(255, 215, 0, 0.9),
+      0 0 20px rgba(196, 30, 58, 0.7),
+      0 0 30px rgba(34, 139, 34, 0.5);
+  }
+  to {
+    text-shadow: 
+      0 0 20px rgba(255, 215, 0, 1),
+      0 0 40px rgba(196, 30, 58, 0.9),
+      0 0 60px rgba(34, 139, 34, 0.7),
+      0 0 80px rgba(255, 215, 0, 0.5);
+  }
+}
+
+body.holiday-christmas .hero-subtitle {
+  color: #ffffff;
+  text-shadow: 
+    0 0 5px rgba(34, 139, 34, 0.9),
+    0 0 10px rgba(255, 255, 255, 0.6),
+    0 0 15px rgba(196, 30, 58, 0.4);
+  animation: subtitlePulse 2s ease-in-out infinite;
+}
+
+@keyframes subtitlePulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+/* Navigation */
+body.holiday-christmas .bottom-nav-item.active {
+  color: #ffd700;
+  border-top: 3px solid #c41e3a;
+  background: linear-gradient(180deg, rgba(196, 30, 58, 0.2) 0%, transparent 100%);
+  box-shadow: 0 -3px 10px rgba(255, 215, 0, 0.3);
+}
+
+/* Cartes produits */
+body.holiday-christmas .product-card {
+  border: 2px solid rgba(196, 30, 58, 0.4);
+  box-shadow: 
+    0 4px 15px rgba(196, 30, 58, 0.3),
+    0 0 20px rgba(34, 139, 34, 0.2),
+    inset 0 0 10px rgba(255, 215, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+body.holiday-christmas .product-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 215, 0, 0.1) 50%, transparent 70%);
+  transform: rotate(45deg);
+  animation: cardShine 3s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes cardShine {
+  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+body.holiday-christmas .product-card:hover {
+  border-color: #ffd700;
+  box-shadow: 
+    0 6px 25px rgba(255, 215, 0, 0.5),
+    0 0 40px rgba(196, 30, 58, 0.4),
+    0 0 60px rgba(34, 139, 34, 0.3);
+  transform: translateY(-5px) scale(1.02);
+}
+
+/* Boutons */
+body.holiday-christmas .btn-primary {
+  background: linear-gradient(135deg, #c41e3a 0%, #228b22 50%, #ffd700 100%);
+  background-size: 200% 100%;
+  box-shadow: 
+    0 4px 15px rgba(196, 30, 58, 0.5),
+    0 0 20px rgba(34, 139, 34, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  animation: buttonGradient 3s ease infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes buttonGradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+body.holiday-christmas .btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: buttonShine 2s ease-in-out infinite;
+}
+
+@keyframes buttonShine {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+body.holiday-christmas .btn-primary:hover {
+  background: linear-gradient(135deg, #ffd700 0%, #c41e3a 50%, #228b22 100%);
+  box-shadow: 
+    0 6px 20px rgba(255, 215, 0, 0.7),
+    0 0 30px rgba(196, 30, 58, 0.5),
+    0 0 40px rgba(34, 139, 34, 0.3);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   PÂQUES - EASTER - DÉCORATIONS PRINTANIÈRES
+   ============================================ */
+
+body.holiday-easter {
+  position: relative;
+  overflow-x: hidden;
+  background: linear-gradient(135deg, #ffeef7 0%, #f0e6ff 30%, #e6f3ff 60%, #fff0e6 100%);
+  background-attachment: fixed;
+  background-size: 400% 400%;
+  animation: easterGradient 15s ease infinite;
+}
+
+@keyframes easterGradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+body.holiday-easter .hero {
+  background: linear-gradient(135deg, rgba(255, 238, 247, 0.98) 0%, rgba(240, 230, 255, 0.98) 100%);
+  border: 3px solid rgba(255, 192, 203, 0.6);
+  box-shadow: 
+    0 0 30px rgba(255, 192, 203, 0.4),
+    0 0 60px rgba(255, 182, 193, 0.3),
+    inset 0 0 20px rgba(255, 255, 255, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Œufs de Pâques variés avec motifs */
+body.holiday-easter .easter-egg {
+  position: fixed;
+  width: 35px;
+  height: 45px;
+  z-index: 9999;
+  pointer-events: none;
+  animation: eggFloat 5s ease-in-out infinite;
+  filter: drop-shadow(0 2px 8px rgba(255, 192, 203, 0.6));
+}
+
+body.holiday-easter .easter-egg.pink {
+  background: linear-gradient(135deg, #ffb6c1 0%, #ffc0cb 50%, #ffb6c1 100%);
+}
+
+body.holiday-easter .easter-egg.purple {
+  background: linear-gradient(135deg, #dda0dd 0%, #da70d6 50%, #dda0dd 100%);
+}
+
+body.holiday-easter .easter-egg.blue {
+  background: linear-gradient(135deg, #add8e6 0%, #87ceeb 50%, #add8e6 100%);
+}
+
+body.holiday-easter .easter-egg.yellow {
+  background: linear-gradient(135deg, #fffacd 0%, #ffffe0 50%, #fffacd 100%);
+}
+
+body.holiday-easter .easter-egg {
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  box-shadow: 
+    0 2px 10px rgba(255, 192, 203, 0.7),
+    inset -5px -5px 10px rgba(0, 0, 0, 0.1),
+    inset 5px 5px 10px rgba(255, 255, 255, 0.5);
+}
+
+body.holiday-easter .easter-egg::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 18px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0.8;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+body.holiday-easter .easter-egg::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  box-shadow: 
+    12px 0 0 rgba(255, 255, 255, 0.4),
+    0 12px 0 rgba(255, 255, 255, 0.3),
+    12px 12px 0 rgba(255, 255, 255, 0.2);
+}
+
+@keyframes eggFloat {
+  0%, 100% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-25px) translateX(10px) rotate(5deg);
+  }
+  50% {
+    transform: translateY(-30px) translateX(-5px) rotate(-5deg);
+  }
+  75% {
+    transform: translateY(-20px) translateX(8px) rotate(3deg);
+  }
+}
+
+/* Lapins animés */
+body.holiday-easter .bunny {
+  position: fixed;
+  font-size: 2em;
+  z-index: 9998;
+  pointer-events: none;
+  animation: bunnyHop 6s ease-in-out infinite;
+  filter: drop-shadow(0 2px 5px rgba(255, 192, 203, 0.5));
+}
+
+@keyframes bunnyHop {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-30px) rotate(-10deg);
+  }
+  50% {
+    transform: translateY(-40px) rotate(10deg);
+  }
+  75% {
+    transform: translateY(-25px) rotate(-5deg);
+  }
+}
+
+/* Fleurs printanières */
+body.holiday-easter .flower {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  z-index: 9997;
+  pointer-events: none;
+  animation: flowerBloom 4s ease-in-out infinite;
+}
+
+body.holiday-easter .flower::before {
+  content: '🌸';
+  font-size: 1.5em;
+  display: block;
+  animation: flowerRotate 3s linear infinite;
+}
+
+@keyframes flowerBloom {
+  0%, 100% { 
+    transform: scale(0.8);
+    opacity: 0.7;
+  }
+  50% { 
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes flowerRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Papillons volants */
+body.holiday-easter .butterfly {
+  position: fixed;
+  font-size: 1.5em;
+  z-index: 9996;
+  pointer-events: none;
+  animation: butterflyFly 8s ease-in-out infinite;
+}
+
+@keyframes butterflyFly {
+  0% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateX(50px) translateY(-30px) rotate(15deg);
+  }
+  50% {
+    transform: translateX(100px) translateY(-20px) rotate(-15deg);
+  }
+  75% {
+    transform: translateX(150px) translateY(-40px) rotate(10deg);
+  }
+  100% {
+    transform: translateX(200px) translateY(0) rotate(0deg);
+  }
+}
+
+/* Arc-en-ciel subtil */
+body.holiday-easter .rainbow {
+  position: fixed;
+  top: 10%;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    #ff6b6b 0%,
+    #ffa500 14%,
+    #ffd700 28%,
+    #51cf66 42%,
+    #4dabf7 56%,
+    #845ef7 70%,
+    #f06292 84%,
+    #ff6b6b 100%
+  );
+  opacity: 0.3;
+  z-index: 9995;
+  pointer-events: none;
+  animation: rainbowMove 10s linear infinite;
+}
+
+@keyframes rainbowMove {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Particules colorées */
+body.holiday-easter .particle {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  z-index: 9994;
+  pointer-events: none;
+  animation: particleFloat 5s ease-in-out infinite;
+}
+
+body.holiday-easter .particle.pink {
+  background: #ffb6c1;
+  box-shadow: 0 0 10px rgba(255, 182, 193, 0.8);
+}
+
+body.holiday-easter .particle.purple {
+  background: #dda0dd;
+  box-shadow: 0 0 10px rgba(221, 160, 221, 0.8);
+}
+
+body.holiday-easter .particle.blue {
+  background: #add8e6;
+  box-shadow: 0 0 10px rgba(173, 216, 230, 0.8);
+}
+
+@keyframes particleFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-50px) scale(1.5);
+    opacity: 1;
+  }
+}
+
+/* Texte Pâques */
+body.holiday-easter .hero-brand {
+  color: #ff69b4;
+  text-shadow: 
+    0 0 10px rgba(255, 105, 180, 0.6),
+    0 0 20px rgba(255, 182, 193, 0.4),
+    0 0 30px rgba(221, 160, 221, 0.3);
+  animation: easterTextGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes easterTextGlow {
+  from {
+    text-shadow: 
+      0 0 10px rgba(255, 105, 180, 0.6),
+      0 0 20px rgba(255, 182, 193, 0.4);
+  }
+  to {
+    text-shadow: 
+      0 0 20px rgba(255, 105, 180, 0.9),
+      0 0 40px rgba(255, 182, 193, 0.7),
+      0 0 60px rgba(221, 160, 221, 0.5);
+  }
+}
+
+body.holiday-easter .hero-subtitle {
+  color: #9370db;
+  text-shadow: 
+    0 0 5px rgba(147, 112, 219, 0.6),
+    0 0 10px rgba(173, 216, 230, 0.4);
+}
+
+body.holiday-easter .bottom-nav-item.active {
+  color: #ff69b4;
+  border-top: 3px solid #ffb6c1;
+  background: linear-gradient(180deg, rgba(255, 182, 193, 0.3) 0%, transparent 100%);
+  box-shadow: 0 -3px 10px rgba(255, 105, 180, 0.3);
+}
+
+body.holiday-easter .product-card {
+  border: 2px solid rgba(255, 192, 203, 0.6);
+  box-shadow: 
+    0 4px 15px rgba(255, 192, 203, 0.4),
+    0 0 20px rgba(255, 182, 193, 0.3),
+    inset 0 0 15px rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.95);
+  position: relative;
+  overflow: hidden;
+}
+
+body.holiday-easter .product-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 192, 203, 0.2) 0%, transparent 70%);
+  animation: cardGlow 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes cardGlow {
+  0%, 100% { transform: scale(0.8); opacity: 0.3; }
+  50% { transform: scale(1.2); opacity: 0.6; }
+}
+
+body.holiday-easter .product-card:hover {
+  border-color: #ff69b4;
+  box-shadow: 
+    0 6px 25px rgba(255, 105, 180, 0.5),
+    0 0 40px rgba(255, 182, 193, 0.4);
+  transform: translateY(-5px) scale(1.02);
+}
+
+body.holiday-easter .btn-primary {
+  background: linear-gradient(135deg, #ffb6c1 0%, #ff69b4 50%, #9370db 100%);
+  background-size: 200% 100%;
+  box-shadow: 
+    0 4px 15px rgba(255, 105, 180, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  animation: easterButtonGradient 3s ease infinite;
+}
+
+@keyframes easterButtonGradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+body.holiday-easter .btn-primary:hover {
+  background: linear-gradient(135deg, #ff69b4 0%, #9370db 50%, #dda0dd 100%);
+  box-shadow: 
+    0 6px 20px rgba(255, 105, 180, 0.7),
+    0 0 30px rgba(147, 112, 219, 0.5);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   NOUVEL AN - NEWYEAR - DÉCORATIONS FESTIVES
+   ============================================ */
+
+body.holiday-newyear {
+  position: relative;
+  overflow-x: hidden;
+  background: linear-gradient(135deg, #1a0a1a 0%, #0a0a1a 30%, #1a1a0a 60%, #0a1a1a 100%);
+  background-attachment: fixed;
+  background-size: 400% 400%;
+  animation: newyearGradient 20s ease infinite;
+}
+
+@keyframes newyearGradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Confettis variés - Formes et couleurs */
+body.holiday-newyear .confetti {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  animation: confettiFall linear infinite;
+}
+
+body.holiday-newyear .confetti.square {
+  width: 10px;
+  height: 10px;
+  background: #ffd700;
+  transform: rotate(45deg);
+}
+
+body.holiday-newyear .confetti.circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ff6b6b;
+}
+
+body.holiday-newyear .confetti.triangle {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 10px solid #4ecdc4;
+}
+
+body.holiday-newyear .confetti.star {
+  width: 10px;
+  height: 10px;
+  background: #ffd700;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+body.holiday-newyear .confetti:nth-child(5n) {
+  background: #ffd700;
+  animation-duration: 3s;
+  animation-delay: -0.5s;
+}
+
+body.holiday-newyear .confetti:nth-child(5n+1) {
+  background: #ff6b6b;
+  animation-duration: 4s;
+  animation-delay: -1s;
+}
+
+body.holiday-newyear .confetti:nth-child(5n+2) {
+  background: #4ecdc4;
+  animation-duration: 3.5s;
+  animation-delay: -1.5s;
+}
+
+body.holiday-newyear .confetti:nth-child(5n+3) {
+  background: #95e1d3;
+  animation-duration: 4.5s;
+  animation-delay: -2s;
+}
+
+body.holiday-newyear .confetti:nth-child(5n+4) {
+  background: #f38181;
+  animation-duration: 3.8s;
+  animation-delay: -0.8s;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(-10px) translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+  25% {
+    transform: translateY(25vh) translateX(30px) rotate(180deg);
+  }
+  50% {
+    transform: translateY(50vh) translateX(-20px) rotate(360deg);
+  }
+  75% {
+    transform: translateY(75vh) translateX(15px) rotate(540deg);
+  }
+  100% {
+    transform: translateY(100vh) translateX(0) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* Étoiles dorées scintillantes */
+body.holiday-newyear .gold-star {
+  position: fixed;
+  color: #ffd700;
+  font-size: 1.5em;
+  z-index: 9998;
+  pointer-events: none;
+  text-shadow: 
+    0 0 10px rgba(255, 215, 0, 1),
+    0 0 20px rgba(255, 215, 0, 0.8),
+    0 0 30px rgba(255, 215, 0, 0.6),
+    0 0 40px rgba(255, 215, 0, 0.4);
+  animation: goldStarTwinkle 1.5s ease-in-out infinite;
+}
+
+@keyframes goldStarTwinkle {
+  0%, 100% { 
+    opacity: 0.4; 
+    transform: scale(0.7) rotate(0deg);
+  }
+  50% { 
+    opacity: 1; 
+    transform: scale(1.3) rotate(180deg);
+  }
+}
+
+/* Feux d'artifice */
+body.holiday-newyear .firework {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  z-index: 9997;
+  pointer-events: none;
+  animation: fireworkExplode 2s ease-out infinite;
+}
+
+body.holiday-newyear .firework::before,
+body.holiday-newyear .firework::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: inherit;
+}
+
+body.holiday-newyear .firework::before {
+  animation: fireworkSpark 2s ease-out infinite;
+}
+
+body.holiday-newyear .firework::after {
+  animation: fireworkSpark 2s ease-out infinite 0.3s;
+}
+
+@keyframes fireworkExplode {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(20);
+    opacity: 0;
+  }
+}
+
+@keyframes fireworkSpark {
+  0% {
+    transform: translate(0, 0) scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--spark-x, 50px), var(--spark-y, 50px)) scale(1);
+    opacity: 0;
+  }
+}
+
+/* Ballons flottants */
+body.holiday-newyear .balloon {
+  position: fixed;
+  width: 30px;
+  height: 40px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  z-index: 9996;
+  pointer-events: none;
+  animation: balloonFloat 8s ease-in-out infinite;
+  box-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.3),
+    inset -3px -3px 8px rgba(0, 0, 0, 0.2),
+    inset 3px 3px 8px rgba(255, 255, 255, 0.3);
+}
+
+body.holiday-newyear .balloon.gold {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+}
+
+body.holiday-newyear .balloon.red {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff8787 100%);
+}
+
+body.holiday-newyear .balloon.blue {
+  background: linear-gradient(135deg, #4ecdc4 0%, #6edcd4 100%);
+}
+
+@keyframes balloonFloat {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-60px) translateX(30px);
+  }
+}
+
+/* Particules dorées */
+body.holiday-newyear .gold-particle {
+  position: fixed;
+  width: 3px;
+  height: 3px;
+  background: #ffd700;
+  border-radius: 50%;
+  z-index: 9995;
+  pointer-events: none;
+  box-shadow: 
+    0 0 6px rgba(255, 215, 0, 1),
+    0 0 12px rgba(255, 215, 0, 0.8);
+  animation: goldParticleFloat 4s ease-in-out infinite;
+}
+
+@keyframes goldParticleFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-40px) scale(1.5);
+    opacity: 1;
+  }
+}
+
+/* Hero Nouvel An */
+body.holiday-newyear .hero {
+  background: linear-gradient(135deg, rgba(26, 10, 26, 0.98) 0%, rgba(10, 10, 26, 0.98) 100%);
+  border: 3px solid rgba(255, 215, 0, 0.6);
+  box-shadow: 
+    0 0 40px rgba(255, 215, 0, 0.5),
+    0 0 80px rgba(255, 215, 0, 0.3),
+    0 0 120px rgba(255, 215, 0, 0.2),
+    inset 0 0 40px rgba(255, 215, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+body.holiday-newyear .hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.15) 0%, transparent 70%);
+  animation: newyearLightRotate 12s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes newyearLightRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+body.holiday-newyear .hero-brand {
+  color: #ffd700;
+  text-shadow: 
+    0 0 15px rgba(255, 215, 0, 1),
+    0 0 30px rgba(255, 215, 0, 0.9),
+    0 0 45px rgba(255, 215, 0, 0.7),
+    0 0 60px rgba(255, 215, 0, 0.5);
+  animation: newyearGlow 2s ease-in-out infinite alternate;
+  position: relative;
+}
+
+@keyframes newyearGlow {
+  from {
+    text-shadow: 
+      0 0 15px rgba(255, 215, 0, 1),
+      0 0 30px rgba(255, 215, 0, 0.8);
+  }
+  to {
+    text-shadow: 
+      0 0 25px rgba(255, 215, 0, 1),
+      0 0 50px rgba(255, 215, 0, 1),
+      0 0 75px rgba(255, 215, 0, 0.9),
+      0 0 100px rgba(255, 215, 0, 0.7);
+  }
+}
+
+body.holiday-newyear .hero-subtitle {
+  color: #ffffff;
+  text-shadow: 
+    0 0 10px rgba(255, 215, 0, 0.9),
+    0 0 20px rgba(255, 215, 0, 0.6);
+}
+
+body.holiday-newyear .bottom-nav-item.active {
+  color: #ffd700;
+  border-top: 3px solid #ffd700;
+  background: linear-gradient(180deg, rgba(255, 215, 0, 0.3) 0%, transparent 100%);
+  box-shadow: 0 -3px 15px rgba(255, 215, 0, 0.5);
+}
+
+body.holiday-newyear .product-card {
+  border: 2px solid rgba(255, 215, 0, 0.5);
+  box-shadow: 
+    0 4px 15px rgba(255, 215, 0, 0.4),
+    0 0 30px rgba(255, 215, 0, 0.3),
+    inset 0 0 15px rgba(255, 215, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+body.holiday-newyear .product-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 215, 0, 0.15) 50%, transparent 70%);
+  transform: rotate(45deg);
+  animation: newyearCardShine 4s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes newyearCardShine {
+  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+body.holiday-newyear .product-card:hover {
+  border-color: #ffd700;
+  box-shadow: 
+    0 6px 25px rgba(255, 215, 0, 0.7),
+    0 0 50px rgba(255, 215, 0, 0.5),
+    0 0 70px rgba(255, 215, 0, 0.3);
+  transform: translateY(-5px) scale(1.02);
+}
+
+body.holiday-newyear .btn-primary {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #fff8dc 100%);
+  background-size: 200% 100%;
+  color: #1a1a1a;
+  box-shadow: 
+    0 4px 15px rgba(255, 215, 0, 0.6),
+    0 0 25px rgba(255, 215, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  animation: newyearButtonGradient 3s ease infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes newyearButtonGradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+body.holiday-newyear .btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: newyearButtonShine 2.5s ease-in-out infinite;
+}
+
+@keyframes newyearButtonShine {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+body.holiday-newyear .btn-primary:hover {
+  background: linear-gradient(135deg, #ffed4e 0%, #ffd700 50%, #fff8dc 100%);
+  box-shadow: 
+    0 6px 20px rgba(255, 215, 0, 0.9),
+    0 0 40px rgba(255, 215, 0, 0.7),
+    0 0 60px rgba(255, 215, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   HALLOWEEN - DÉCORATIONS ÉPOUVANTABLES
+   ============================================ */
+
+body.holiday-halloween {
+  position: relative;
+  overflow-x: hidden;
+  background: linear-gradient(135deg, #1a0a0a 0%, #0a0a1a 50%, #1a0a0a 100%);
+  background-attachment: fixed;
+}
+
+body.holiday-halloween .hero {
+  background: linear-gradient(135deg, rgba(26, 10, 10, 0.98) 0%, rgba(10, 10, 26, 0.98) 100%);
+  border: 3px solid rgba(255, 140, 0, 0.6);
+  box-shadow: 
+    0 0 40px rgba(255, 140, 0, 0.4),
+    0 0 80px rgba(255, 99, 71, 0.3),
+    0 0 120px rgba(255, 69, 0, 0.2),
+    inset 0 0 40px rgba(255, 140, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Chauves-souris variées */
+body.holiday-halloween .bat {
+  position: fixed;
+  font-size: 1.8em;
+  color: #1a1a1a;
+  z-index: 9999;
+  pointer-events: none;
+  animation: batFly 10s linear infinite;
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.8));
+}
+
+body.holiday-halloween .bat:nth-child(odd) {
+  animation-duration: 8s;
+  animation-delay: -2s;
+}
+
+body.holiday-halloween .bat:nth-child(even) {
+  animation-duration: 12s;
+  animation-delay: -4s;
+}
+
+@keyframes batFly {
+  0% {
+    transform: translateX(-50px) translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(50vw) translateY(-50px) rotate(180deg);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(calc(100vw + 50px)) translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Citrouilles animées */
+body.holiday-halloween .pumpkin {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #ff8c00 0%, #ff6347 100%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  z-index: 9998;
+  pointer-events: none;
+  box-shadow: 
+    0 0 15px rgba(255, 140, 0, 0.8),
+    inset -5px -5px 10px rgba(0, 0, 0, 0.3);
+  animation: pumpkinGlow 3s ease-in-out infinite;
+}
+
+body.holiday-halloween .pumpkin::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  width: 8px;
+  height: 8px;
+  background: #1a1a1a;
+  border-radius: 50%;
+  box-shadow: 12px 0 0 #1a1a1a, 6px 12px 0 #1a1a1a;
+}
+
+@keyframes pumpkinGlow {
+  0%, 100% {
+    box-shadow: 
+      0 0 15px rgba(255, 140, 0, 0.8),
+      inset -5px -5px 10px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    box-shadow: 
+      0 0 25px rgba(255, 140, 0, 1),
+      0 0 40px rgba(255, 99, 71, 0.8),
+      inset -5px -5px 10px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Toiles d'araignée */
+body.holiday-halloween .spider-web {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  z-index: 9997;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+body.holiday-halloween .spider-web::before,
+body.holiday-halloween .spider-web::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+body.holiday-halloween .spider-web::before {
+  width: 100%;
+  height: 1px;
+}
+
+body.holiday-halloween .spider-web::after {
+  width: 1px;
+  height: 100%;
+}
+
+/* Fantômes flottants */
+body.holiday-halloween .ghost {
+  position: fixed;
+  width: 30px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50% 50% 0 0;
+  z-index: 9996;
+  pointer-events: none;
+  animation: ghostFloat 6s ease-in-out infinite;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+body.holiday-halloween .ghost::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: 
+    radial-gradient(circle at 0 0, transparent 10px, rgba(255, 255, 255, 0.9) 10px),
+    radial-gradient(circle at 20px 0, transparent 10px, rgba(255, 255, 255, 0.9) 10px);
+  background-size: 20px 20px;
+}
+
+body.holiday-halloween .ghost::after {
+  content: '👻';
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8em;
+}
+
+@keyframes ghostFloat {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-40px) translateX(20px);
+    opacity: 1;
+  }
+}
+
+/* Brume/fog */
+body.holiday-halloween .fog {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.3) 0%, transparent 100%);
+  z-index: 9995;
+  pointer-events: none;
+  animation: fogMove 15s ease-in-out infinite;
+}
+
+@keyframes fogMove {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translateX(50px);
+  }
+}
+
+/* Lueurs orange/rouge */
+body.holiday-halloween .glow-orange {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(255, 140, 0, 0.4) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 9994;
+  pointer-events: none;
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.7;
+  }
+}
+
+body.holiday-halloween .hero-brand {
+  color: #ff8c00;
+  text-shadow: 
+    0 0 15px rgba(255, 140, 0, 1),
+    0 0 30px rgba(255, 99, 71, 0.9),
+    0 0 45px rgba(255, 69, 0, 0.7),
+    0 0 60px rgba(255, 140, 0, 0.5);
+  animation: halloweenGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes halloweenGlow {
+  from {
+    text-shadow: 
+      0 0 15px rgba(255, 140, 0, 1),
+      0 0 30px rgba(255, 99, 71, 0.8);
+  }
+  to {
+    text-shadow: 
+      0 0 25px rgba(255, 140, 0, 1),
+      0 0 50px rgba(255, 99, 71, 1),
+      0 0 75px rgba(255, 69, 0, 0.9),
+      0 0 100px rgba(255, 140, 0, 0.7);
+  }
+}
+
+body.holiday-halloween .hero-subtitle {
+  color: #ff6347;
+  text-shadow: 
+    0 0 10px rgba(255, 99, 71, 0.9),
+    0 0 20px rgba(255, 140, 0, 0.6);
+}
+
+body.holiday-halloween .bottom-nav-item.active {
+  color: #ff8c00;
+  border-top: 3px solid #ff6347;
+  background: linear-gradient(180deg, rgba(255, 140, 0, 0.3) 0%, transparent 100%);
+  box-shadow: 0 -3px 15px rgba(255, 99, 71, 0.5);
+}
+
+body.holiday-halloween .product-card {
+  border: 2px solid rgba(255, 140, 0, 0.5);
+  box-shadow: 
+    0 4px 15px rgba(255, 140, 0, 0.4),
+    0 0 30px rgba(255, 99, 71, 0.3),
+    inset 0 0 15px rgba(255, 140, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+body.holiday-halloween .product-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 140, 0, 0.2) 0%, transparent 70%);
+  animation: halloweenCardGlow 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes halloweenCardGlow {
+  0%, 100% {
+    transform: scale(0.8);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.6;
+  }
+}
+
+body.holiday-halloween .product-card:hover {
+  border-color: #ff6347;
+  box-shadow: 
+    0 6px 25px rgba(255, 99, 71, 0.6),
+    0 0 50px rgba(255, 140, 0, 0.5),
+    0 0 70px rgba(255, 69, 0, 0.4);
+  transform: translateY(-5px) scale(1.02);
+}
+
+body.holiday-halloween .btn-primary {
+  background: linear-gradient(135deg, #ff8c00 0%, #ff6347 50%, #ff4500 100%);
+  background-size: 200% 100%;
+  box-shadow: 
+    0 4px 15px rgba(255, 140, 0, 0.5),
+    0 0 25px rgba(255, 99, 71, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  animation: halloweenButtonGradient 3s ease infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes halloweenButtonGradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+body.holiday-halloween .btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: halloweenButtonShine 2s ease-in-out infinite;
+}
+
+@keyframes halloweenButtonShine {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+body.holiday-halloween .btn-primary:hover {
+  background: linear-gradient(135deg, #ff6347 0%, #ff4500 50%, #ff8c00 100%);
+  box-shadow: 
+    0 6px 20px rgba(255, 99, 71, 0.8),
+    0 0 40px rgba(255, 140, 0, 0.6),
+    0 0 60px rgba(255, 69, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   STYLES COMMUNS ET OPTIMISATIONS
+   ============================================ */
+
+/* Assure que les décorations ne bloquent pas les interactions */
+body[class*="holiday-"] .holiday-decoration {
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Animation de transition douce lors du changement de thème */
+body[class*="holiday-"] {
+  transition: background 0.8s ease, border-color 0.8s ease, box-shadow 0.8s ease;
+}
+
+body[class*="holiday-"] * {
+  transition: color 0.5s ease, background 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Performance - GPU acceleration */
+body[class*="holiday-"] .snowflake,
+body[class*="holiday-"] .easter-egg,
+body[class*="holiday-"] .confetti,
+body[class*="holiday-"] .bat,
+body[class*="holiday-"] .ornament,
+body[class*="holiday-"] .star-decoration,
+body[class*="holiday-"] .light-sparkle {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Guirlandes de Noël réalistes autour des cartes produits */
+.christmas-garland {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  pointer-events: none;
+  z-index: 1;
+  overflow: visible;
+}
+
+/* Corde de la guirlande (fil vert) */
+.christmas-garland::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    #2d5016 0%,
+    #3a6b1f 25%,
+    #2d5016 50%,
+    #3a6b1f 75%,
+    #2d5016 100%);
+  background-size: 20px 100%;
+  border-radius: 2px;
+  box-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  z-index: 1;
+}
+
+.christmas-garland::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    #2d5016 0%,
+    #3a6b1f 25%,
+    #2d5016 50%,
+    #3a6b1f 75%,
+    #2d5016 100%);
+  background-size: 20px 100%;
+  border-radius: 2px;
+  box-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  z-index: 1;
+}
+
+/* Guirlandes pour les sections */
+.christmas-garland-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  pointer-events: none;
+  z-index: 1;
+  overflow: visible;
+}
+
+.christmas-garland-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    #2d5016 0%,
+    #3a6b1f 25%,
+    #2d5016 50%,
+    #3a6b1f 75%,
+    #2d5016 100%);
+  background-size: 20px 100%;
+  border-radius: 2px;
+  box-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  z-index: 1;
+}
+
+/* Corriger la guirlande sur les services pour qu'elle ne descende pas */
+.home-services .christmas-garland,
+.home-services > * .christmas-garland {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  pointer-events: none;
+  z-index: 1;
+  overflow: visible;
+}
+
+/* Lampes réalistes de la guirlande */
+.garland-light {
+  position: absolute;
+  top: -6px;
+  width: 12px;
+  height: 16px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 200, 0, 0.8) 30%,
+    rgba(255, 100, 0, 0.9) 60%,
+    rgba(255, 50, 0, 1) 100%);
+  box-shadow: 
+    0 0 8px rgba(255, 200, 0, 0.9),
+    0 0 16px rgba(255, 150, 0, 0.7),
+    0 0 24px rgba(255, 100, 0, 0.5),
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.2),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.3);
+  animation: realisticLightBlink 2s ease-in-out infinite;
+  z-index: 3;
+  transform-origin: center bottom;
+}
+
+/* Variantes de couleurs pour les lampes */
+.garland-light:nth-child(3n+1) {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 200, 0, 0.8) 30%,
+    rgba(255, 100, 0, 0.9) 60%,
+    rgba(255, 50, 0, 1) 100%);
+  box-shadow: 
+    0 0 8px rgba(255, 200, 0, 0.9),
+    0 0 16px rgba(255, 150, 0, 0.7),
+    0 0 24px rgba(255, 100, 0, 0.5),
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.2),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+.garland-light:nth-child(3n+2) {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(100, 255, 100, 0.8) 30%,
+    rgba(0, 255, 0, 0.9) 60%,
+    rgba(0, 200, 0, 1) 100%);
+  box-shadow: 
+    0 0 8px rgba(100, 255, 100, 0.9),
+    0 0 16px rgba(0, 255, 0, 0.7),
+    0 0 24px rgba(0, 200, 0, 0.5),
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.2),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+.garland-light:nth-child(3n+3) {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(200, 200, 255, 0.8) 30%,
+    rgba(100, 100, 255, 0.9) 60%,
+    rgba(50, 50, 255, 1) 100%);
+  box-shadow: 
+    0 0 8px rgba(200, 200, 255, 0.9),
+    0 0 16px rgba(100, 100, 255, 0.7),
+    0 0 24px rgba(50, 50, 255, 0.5),
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.2),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+/* Fil de connexion de la lampe */
+.garland-light::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 3px;
+  background: #2d5016;
+  border-radius: 1px;
+  z-index: -1;
+}
+
+/* Ajustement pour les lampes en bas */
+.garland-light[style*="bottom"]::before {
+  top: auto;
+  bottom: -3px;
+}
+
+@keyframes realisticLightBlink {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(0.85);
+    filter: brightness(0.7);
+  }
+  25% {
+    opacity: 0.8;
+    transform: scale(0.95);
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(1.2);
+  }
+  75% {
+    opacity: 0.8;
+    transform: scale(0.95);
+    filter: brightness(1);
+  }
+}
+
+/* Animation SVG de Noël au centre - Effet 3D ultra-réaliste */
+#christmasTreeContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) perspective(1200px) rotateX(8deg) rotateY(-8deg);
+  width: 90%;
+  height: 90%;
+  max-width: 650px;
+  max-height: 650px;
+  z-index: 1;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: 
+    drop-shadow(0 25px 50px rgba(0, 0, 0, 0.6)) 
+    drop-shadow(0 15px 30px rgba(0, 0, 0, 0.4))
+    drop-shadow(0 5px 15px rgba(0, 50, 0, 0.3));
+  opacity: 0;
+  animation: treeFadeIn 0.5s ease-out forwards;
+  transform-style: preserve-3d;
+}
+
+@keyframes treeFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* S'assurer que les cartes produits et services passent au-dessus du sapin */
+.products-grid,
+.product-card,
+[data-product-id],
+#homeServices,
+.home-services,
+.home-services > *,
+.service-card,
+.promo-card,
+#avis,
+#contact,
+.avis-section,
+.contact-section,
+.avis-section > *,
+.contact-section > *,
+.cart-page,
+.cart-content {
+  position: relative;
+  z-index: 10;
+}
+
+#christmasTreeContainer svg {
+  width: 100%;
+  height: 100%;
+  visibility: visible;
+  filter: drop-shadow(0 5px 15px rgba(0, 100, 0, 0.4));
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+/* Effets 3D ultra-réalistes pour les branches du sapin */
+#christmasTreeContainer .treePathMask {
+  filter: 
+    drop-shadow(0 6px 15px rgba(0, 50, 0, 0.7)) 
+    drop-shadow(0 3px 8px rgba(0, 0, 0, 0.5))
+    drop-shadow(0 1px 3px rgba(0, 100, 0, 0.4))
+    drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+  transform-style: preserve-3d;
+  transition: filter 0.3s ease, transform 0.3s ease;
+  transform-origin: center bottom;
+}
+
+#christmasTreeContainer .treePathMask:hover {
+  filter: 
+    drop-shadow(0 8px 20px rgba(0, 100, 0, 0.9)) 
+    drop-shadow(0 4px 10px rgba(0, 0, 0, 0.6))
+    drop-shadow(0 2px 5px rgba(0, 150, 0, 0.5));
+}
+
+/* Effet 3D amélioré pour le pot */
+#christmasTreeContainer .treePotMask {
+  filter: 
+    drop-shadow(0 5px 12px rgba(0, 0, 0, 0.7)) 
+    drop-shadow(0 3px 6px rgba(0, 0, 0, 0.5))
+    drop-shadow(inset 0 2px 4px rgba(255, 255, 255, 0.1));
+  transform-style: preserve-3d;
+}
+
+/* Effet 3D amélioré pour l'étoile */
+#christmasTreeContainer #star {
+  filter: 
+    drop-shadow(0 0 15px rgba(255, 215, 0, 0.9)) 
+    drop-shadow(0 0 30px rgba(255, 215, 0, 0.6)) 
+    drop-shadow(0 0 45px rgba(255, 215, 0, 0.3))
+    drop-shadow(0 5px 10px rgba(0, 0, 0, 0.5));
+  transform-style: preserve-3d;
+  animation: starGlow 2s ease-in-out infinite;
+}
+
+@keyframes starGlow {
+  0%, 100% {
+    filter: 
+      drop-shadow(0 0 15px rgba(255, 215, 0, 0.9)) 
+      drop-shadow(0 0 30px rgba(255, 215, 0, 0.6)) 
+      drop-shadow(0 0 45px rgba(255, 215, 0, 0.3));
+  }
+  50% {
+    filter: 
+      drop-shadow(0 0 20px rgba(255, 215, 0, 1)) 
+      drop-shadow(0 0 40px rgba(255, 215, 0, 0.8)) 
+      drop-shadow(0 0 60px rgba(255, 215, 0, 0.5));
+  }
+}
+
+/* Effets 3D pour les boules de Noël */
+#christmasTreeContainer .treeOrnament {
+  filter: 
+    drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5)) 
+    drop-shadow(0 1px 3px rgba(0, 0, 0, 0.3))
+    drop-shadow(inset -2px -2px 4px rgba(0, 0, 0, 0.2));
+  transform-style: preserve-3d;
+  transform-origin: center center;
+}
+
+#christmasTreeContainer .ornamentReflect {
+  filter: blur(0.5px);
+  transform-style: preserve-3d;
+}
+
+#christmasTreeContainer .sparkle {
+  mix-blend-mode: screen;
+}
+
+#christmasTreeContainer #endMessage {
+  font-family: 'mountains_of_christmasregular', serif;
+  font-size: 2rem;
+  text-anchor: middle;
+  text-align: center;
+  fill: #FFFFFF;
+  color: #FFFFFF;
+  opacity: 0;
+  letter-spacing: 1px;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+}
+
+/* Responsive - Optimisations mobile */
+@media (max-width: 768px) {
+  body[class*="holiday-"]::before,
+  body[class*="holiday-"]::after {
+    height: 50px;
+  }
+  
+  body.holiday-christmas .snowflake,
+  body.holiday-easter .easter-egg,
+  body.holiday-newyear .confetti,
+  body.holiday-halloween .bat {
+    font-size: 1em;
+  }
+  
+  body.holiday-easter .easter-egg,
+  body.holiday-newyear .balloon,
+  body.holiday-halloween .pumpkin {
+    width: 25px;
+    height: 25px;
+  }
+  
+  /* Réduire les effets sur mobile pour la performance */
+  body[class*="holiday-"] .hero::before,
+  body[class*="holiday-"] .product-card::before {
+    animation-duration: 6s;
+  }
+  
+  body[class*="holiday-"] .hero-brand {
+    animation-duration: 4s;
+  }
+}
+
+/* Mode performance - Réduire les animations si nécessaire */
+@media (prefers-reduced-motion: reduce) {
+  body[class*="holiday-"] *,
+  body[class*="holiday-"] *::before,
+  body[class*="holiday-"] *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Amélioration de la lisibilité */
+body[class*="holiday-"] .product-card,
+body[class*="holiday-"] .hero,
+body[class*="holiday-"] .btn-primary {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Effets de profondeur */
+body[class*="holiday-"] .product-card:hover {
+  z-index: 10;
+}
+
+/* Amélioration des contrastes pour l'accessibilité */
+body[class*="holiday-"] .hero-brand,
+body[class*="holiday-"] .hero-subtitle {
+  text-shadow: 
+    0 0 10px currentColor,
+    0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* ============================================
+   DÉCORATIONS DE MODALES PAR THÈME
+   ============================================ */
+
+/* Animations pour les décorations de modales - Pâques */
+@keyframes easterBorderPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5), inset 0 0 20px rgba(255, 215, 0, 0.2);
+    border-color: #ffd700;
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.8), inset 0 0 30px rgba(255, 215, 0, 0.4);
+    border-color: #ffed4e;
+  }
+}
+
+@keyframes easterEggFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+}
+
+/* Animations pour les décorations de modales - Nouvel An */
+@keyframes newyearBorderShine {
+  0% {
+    border-image-source: linear-gradient(45deg, #ffd700, #ff6b6b, #4ecdc4, #ffe66d, #a8e6cf);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+  }
+  25% {
+    border-image-source: linear-gradient(45deg, #ff6b6b, #4ecdc4, #ffe66d, #a8e6cf, #ffd700);
+    box-shadow: 0 0 35px rgba(255, 107, 107, 0.7);
+  }
+  50% {
+    border-image-source: linear-gradient(45deg, #4ecdc4, #ffe66d, #a8e6cf, #ffd700, #ff6b6b);
+    box-shadow: 0 0 40px rgba(78, 205, 196, 0.8);
+  }
+  75% {
+    border-image-source: linear-gradient(45deg, #ffe66d, #a8e6cf, #ffd700, #ff6b6b, #4ecdc4);
+    box-shadow: 0 0 35px rgba(255, 230, 109, 0.7);
+  }
+  100% {
+    border-image-source: linear-gradient(45deg, #a8e6cf, #ffd700, #ff6b6b, #4ecdc4, #ffe66d);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+  }
+}
+
+@keyframes confettiFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-8px) rotate(180deg);
+    opacity: 1;
+  }
+}
+
+/* Animations pour les décorations de modales - Halloween */
+@keyframes halloweenBorderGlow {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(255, 140, 0, 0.7), inset 0 0 25px rgba(255, 140, 0, 0.3);
+    border-color: #ff8c00;
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(255, 140, 0, 1), inset 0 0 35px rgba(255, 140, 0, 0.5);
+    border-color: #ffa500;
+  }
+}
+
+@keyframes batFly {
+  0%, 100% {
+    transform: translateX(0) translateY(0) rotate(0deg);
+    opacity: 0.8;
+  }
+  25% {
+    transform: translateX(5px) translateY(-5px) rotate(-5deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(0) translateY(-8px) rotate(0deg);
+    opacity: 1;
+  }
+  75% {
+    transform: translateX(-5px) translateY(-5px) rotate(5deg);
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   DÉCORATIONS DE MODALES - STYLES INTERNES
+   ============================================ */
+
+/* Guirlandes à l'intérieur des modales */
+#productModal .christmas-garland,
+.product-modal .christmas-garland,
+.pm-wrap .christmas-garland {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  pointer-events: none;
+  overflow: visible;
+}
+
+#productModal .christmas-garland::before,
+.product-modal .christmas-garland::before,
+.pm-wrap .christmas-garland::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    #2d5016 0%,
+    #3a6b1f 25%,
+    #2d5016 50%,
+    #3a6b1f 75%,
+    #2d5016 100%);
+  background-size: 20px 100%;
+  border-radius: 2px;
+  box-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  z-index: 1;
+}
+
+#productModal .christmas-garland::after,
+.product-modal .christmas-garland::after,
+.pm-wrap .christmas-garland::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    #2d5016 0%,
+    #3a6b1f 25%,
+    #2d5016 50%,
+    #3a6b1f 75%,
+    #2d5016 100%);
+  background-size: 20px 100%;
+  border-radius: 2px;
+  box-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  z-index: 1;
+}
+
+/* Lampes à l'intérieur des modales */
+#productModal .garland-light,
+.product-modal .garland-light,
+.pm-wrap .garland-light {
+  position: absolute;
+  width: 12px;
+  height: 16px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  box-shadow: 
+    0 0 8px rgba(255, 200, 0, 0.9),
+    0 0 16px rgba(255, 150, 0, 0.7),
+    0 0 24px rgba(255, 100, 0, 0.5),
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.2),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.3);
+  animation: realisticLightBlink 2s ease-in-out infinite;
+  z-index: 3;
+  transform-origin: center bottom;
+  pointer-events: none;
+}
+
+/* ============================================
+   FLOCONS DE NEIGE SUR L'ÉCRAN DE CHARGEMENT
+   ============================================ */
+
+/* Flocons de neige sur l'écran de chargement */
+#loadingScreen .loading-snowflake {
+  position: absolute;
+  top: -20px;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  text-shadow: 
+    0 0 5px rgba(255, 255, 255, 0.9),
+    0 0 10px rgba(255, 255, 255, 0.6),
+    0 0 15px rgba(255, 255, 255, 0.3);
+  user-select: none;
+  z-index: 100000;
+  pointer-events: none;
+  animation: snowfall linear forwards;
+  filter: blur(0.5px);
+  will-change: transform, opacity;
+  /* Les tailles et durées sont définies en JavaScript pour éviter les conflits */
+}

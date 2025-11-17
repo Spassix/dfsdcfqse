@@ -1,0 +1,50 @@
+[
+  {
+    "id": "product_example_1",
+    "name": "Produit Exemple 1",
+    "category": "Catégorie 1",
+    "farm": "Farm Exemple",
+    "unit": "g",
+    "prices": [
+      {
+        "quantity": 1,
+        "price": 10.50
+      },
+      {
+        "quantity": 5,
+        "price": 45.00
+      },
+      {
+        "quantity": 10,
+        "price": 85.00
+      }
+    ],
+    "photo": "https://example.com/photo1.jpg",
+    "video": "https://example.com/video1.mp4",
+    "description": "Description du produit exemple 1",
+    "featured": true,
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "product_example_2",
+    "name": "Produit Exemple 2",
+    "category": "Catégorie 2",
+    "farm": "",
+    "unit": "ml",
+    "prices": [
+      {
+        "quantity": 1,
+        "price": 15.00
+      },
+      {
+        "quantity": 3,
+        "price": 40.00
+      }
+    ],
+    "photo": "https://example.com/photo2.jpg",
+    "video": "",
+    "description": "Description du produit exemple 2",
+    "featured": false,
+    "createdAt": "2024-01-02T00:00:00.000Z"
+  }
+]

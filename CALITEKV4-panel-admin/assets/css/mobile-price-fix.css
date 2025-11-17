@@ -1,0 +1,20 @@
+/* Fix pour réduire la taille des prix sur mobile dans la modale produit */
+@media (max-width: 768px) {
+  .qty-price-label {
+    font-size: 0.75rem !important;
+    line-height: 1.2 !important;
+    word-break: break-word;
+    white-space: normal;
+  }
+  
+  .qty-btn {
+    min-height: 70px !important;
+    padding: 0.75rem !important;
+    gap: 0.3rem !important;
+  }
+  
+  .qty-grammage {
+    font-size: 1rem !important;
+  }
+}
+
